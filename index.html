@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="uz" style="--night: #3b2a1e; --gold: #d9a542; --turquoise: #8a7a4f; --bole: #a8492f; --paper: #f7f2e7; --paper2: #ece2cd; --card: #fffdf8; --ink: #3a2e22;"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Istanbulda diniy ta'lim — Fotih masjidi yonida</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#0B2230;
+  --cobalt:#16456B;
+  --turquoise:#2A8C8C;
+  --bole:#B8442F;
+  --gold:#D6A93B;
+  --paper:#F5F1E6;
+  --paper2:#EAE3D1;
+  --ink:#15303C;
+  --muted:#5C6F78;
+  --line:rgba(21,48,60,.16);
+  --r:4px;
+  --card:#ffffff;
+  --fs-base:17px;
+  --fs-h1:66px;
+  --fs-h2:42px;
+  --sec-pad:92px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:var(--fs-base);line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.display{font-family:"Amiri","IBM Plex Sans",Georgia,serif;font-weight:700;line-height:1.15;letter-spacing:-.01em}
+.wrap{width:min(1080px,92vw);margin-inline:auto}
+.narrow{width:min(760px,92vw);margin-inline:auto}
+section{padding:clamp(28px,7vw,var(--sec-pad)) 0}
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--turquoise);
+  display:flex;align-items:center;gap:12px;margin-bottom:16px;
+}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--line)}
+h2{font-size:clamp(24px,4.6vw,var(--fs-h2));margin-bottom:14px}
+.lead{color:var(--muted);font-size:clamp(16px,2vw,18px);max-width:62ch;margin-bottom:36px}
+
+/* ---------- pattern ---------- */
+.pattern{position:absolute;inset:0;opacity:.13;pointer-events:none}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;overflow:hidden;color:#F5F1E6;
+  background:
+    radial-gradient(120% 90% at 78% 0%, #1B5379 0%, transparent 60%),
+    linear-gradient(165deg,#0B2230 0%, #102D3E 55%, #0A1D28 100%);
+  padding:clamp(40px,6vw,64px) 0 clamp(56px,7vw,88px);
+}
+.hero .wrap{position:relative;z-index:2}
+.brandbar{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding-bottom:28px;border-bottom:1px solid rgba(214,169,59,.28);flex-wrap:wrap;
+}
+.brand{font-family:"Amiri",serif;font-size:19px;letter-spacing:.02em}
+.brand span{color:var(--gold)}
+.brandbar .meta{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,241,230,.65)}
+.hero-grid{display:grid;gap:clamp(28px,4vw,56px);margin-top:clamp(36px,5vw,56px);grid-template-columns:1fr}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.15fr .85fr;align-items:end}}
+.hero h1{font-size:clamp(32px,6.4vw,var(--fs-h1));letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p.sub{margin-top:20px;font-size:clamp(17px,2.2vw,20px);color:rgba(245,241,230,.82);max-width:44ch}
+.locpill{
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;
+  border:1px solid rgba(214,169,59,.45);border-radius:999px;
+  padding:7px 16px;font-size:13px;font-weight:500;color:var(--gold);
+  background:rgba(214,169,59,.08);
+}
+.locpill i{width:6px;height:6px;border-radius:50%;background:var(--gold);display:block}
+.facts{border-top:1px solid rgba(245,241,230,.16)}
+.facts div{
+  display:flex;justify-content:space-between;gap:18px;
+  padding:13px 0;border-bottom:1px solid rgba(245,241,230,.16);font-size:15px;
+}
+.facts dt{color:rgba(245,241,230,.6)}
+.facts dd{font-weight:600;text-align:left}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;align-items:center}
+.btn{
+  display:inline-block;padding:15px 30px;border-radius:var(--r);
+  font-weight:600;font-size:16px;text-decoration:none;transition:.18s ease;
+  border:1px solid transparent;
+}
+.btn-gold{background:var(--gold);color:#20160A}
+.btn-gold:hover{background:#E8BC4E;transform:translateY(-2px)}
+.btn-ghost{border-color:rgba(245,241,230,.4);color:#F5F1E6}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.btn-dark{background:var(--night);color:#F5F1E6}
+.btn-dark:hover{background:var(--cobalt);transform:translateY(-2px)}
+
+/* ---------- cards ---------- */
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:1fr}
+.g4{grid-template-columns:1fr}
+@media(min-width:640px){.g2{grid-template-columns:1fr 1fr}.g4{grid-template-columns:1fr 1fr}}
+@media(min-width:980px){.g4{grid-template-columns:repeat(4,1fr)}}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:26px 24px;position:relative;
+}
+.card h3{font-size:21px;margin-bottom:8px}
+.card p{font-size:15.5px;color:var(--muted)}
+.card .num{
+  font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;
+  color:var(--bole);letter-spacing:.16em;display:block;margin-bottom:12px;
+}
+.star{width:26px;height:26px;display:block;margin-bottom:14px}
+
+/* ---------- day timeline ---------- */
+.day{background:var(--night);color:#F5F1E6;position:relative;overflow:hidden}
+.day .eyebrow{color:var(--gold)}
+.day .eyebrow::after{background:rgba(245,241,230,.2)}
+.day h2{color:#fff}
+.day .lead{color:rgba(245,241,230,.72)}
+.day .wrap{position:relative;z-index:2}
+.tl{display:grid;gap:0;grid-template-columns:1fr}
+.tl-item{
+  display:grid;grid-template-columns:96px 1fr;gap:20px;
+  padding:22px 0;border-top:1px solid rgba(245,241,230,.18);align-items:start;
+}
+.tl-item:last-child{border-bottom:1px solid rgba(245,241,230,.18)}
+.tl-time{font-family:"IBM Plex Mono",monospace;font-size:14px;font-weight:600;color:var(--gold);padding-top:3px}
+.tl-body h3{font-size:19px;color:#fff;margin-bottom:5px}
+.tl-body p{font-size:15.5px;color:rgba(245,241,230,.7)}
+
+/* ---------- price ---------- */
+.tiles{display:grid;gap:18px;grid-template-columns:1fr}
+@media(min-width:700px){.tiles{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.tiles{grid-template-columns:repeat(4,1fr)}}
+.tile{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:26px 22px;display:flex;flex-direction:column;
+}
+.tile.hot{border-color:var(--gold);border-width:2px;box-shadow:0 14px 34px -22px rgba(11,34,48,.5)}
+.tag{
+  position:absolute;top:-11px;right:18px;background:var(--gold);color:#20160A;
+  font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  padding:4px 12px;border-radius:999px;
+}
+.tile{position:relative}
+.tile h3{font-size:26px}
+.tile .lvl{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--turquoise);margin-bottom:6px}
+.breakdown{margin:18px 0;border-top:1px solid var(--line)}
+.breakdown div{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.breakdown span:first-child{color:var(--muted)}
+.breakdown span:last-child{font-weight:600;font-family:"IBM Plex Mono",monospace}
+.total{margin-top:auto;padding-top:14px}
+.total small{display:block;font-size:12.5px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;font-family:"IBM Plex Mono",monospace}
+.total b{font-family:"Amiri",serif;font-size:34px;color:var(--night);display:block;line-height:1.2}
+
+.note{
+  background:var(--paper2);border-left:3px solid var(--turquoise);
+  padding:20px 24px;border-radius:var(--r);margin-top:24px;font-size:15.5px;
+}
+.note b{color:var(--night)}
+.note ul{margin:10px 0 0 18px}
+.note li{margin-bottom:6px}
+
+/* ---------- list blocks ---------- */
+.split{display:grid;gap:24px;grid-template-columns:1fr}
+@media(min-width:860px){.split{grid-template-columns:1fr 1fr;gap:40px}}
+.blk{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px 26px}
+.blk h3{font-size:22px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.blk ul{list-style:none}
+.blk li{padding:9px 0 9px 26px;position:relative;font-size:15.5px;border-bottom:1px dashed var(--line)}
+.blk li:last-child{border-bottom:0}
+.blk li::before{
+  content:"";position:absolute;left:0;top:17px;width:9px;height:9px;
+  background:var(--turquoise);transform:rotate(45deg);
+}
+.blk li b{color:var(--night)}
+
+/* ---------- steps ---------- */
+.steps{counter-reset:s;display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:760px){.steps{grid-template-columns:repeat(4,1fr)}}
+.step{border-top:2px solid var(--gold);padding-top:18px}
+.step::before{
+  counter-increment:s;content:counter(s,decimal-leading-zero);
+  font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;
+  color:var(--bole);letter-spacing:.14em;display:block;margin-bottom:10px;
+}
+.step h3{font-size:19px;margin-bottom:6px}
+.step p{font-size:15px;color:var(--muted)}
+
+/* ---------- faq ---------- */
+.faq details{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  margin-bottom:10px;overflow:hidden;
+}
+.faq summary{
+  cursor:pointer;list-style:none;padding:18px 52px 18px 22px;
+  font-weight:600;font-size:16.5px;position:relative;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);
+  font-size:24px;font-weight:400;color:var(--turquoise);line-height:1;
+}
+.faq details[open] summary::after{content:"–"}
+.faq details[open] summary{color:var(--cobalt)}
+.faq .ans{padding:0 22px 20px;font-size:15.5px;color:var(--muted)}
+.faq .ans b{color:var(--ink)}
+.faq h3.cat{
+  font-size:15px;font-family:"IBM Plex Mono",monospace;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--bole);
+  margin:34px 0 14px;
+}
+.faq h3.cat:first-of-type{margin-top:0}
+
+/* ---------- final ---------- */
+.final{position:relative;overflow:hidden;background:var(--night);color:#F5F1E6;text-align:center}
+.final .wrap{position:relative;z-index:2}
+.final h2{color:#fff;font-size:clamp(30px,5vw,52px)}
+.final p{color:rgba(245,241,230,.78);max-width:52ch;margin:18px auto 0;font-size:17.5px}
+footer{background:#071A24;color:rgba(245,241,230,.55);font-size:14px;padding:30px 0;text-align:center}
+footer b{color:var(--gold);font-weight:600}
+
+::selection{background:var(--gold);color:#20160A}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+
+/* ===== TAHRIR REJIMI ===== */
+#editbar{
+  position:fixed;right:16px;bottom:16px;z-index:9999;
+  background:#0B2230;color:#F5F1E6;border:1px solid #D6A93B;border-radius:6px;
+  padding:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;
+  font-family:system-ui,sans-serif;font-size:13px;
+  box-shadow:0 10px 30px -10px rgba(0,0,0,.5);max-width:calc(100vw - 32px);
+}
+#editbar button{
+  font:inherit;font-weight:600;cursor:pointer;border:0;border-radius:4px;
+  padding:9px 14px;background:#D6A93B;color:#20160A;
+}
+#editbar button.g{background:transparent;color:#F5F1E6;border:1px solid rgba(245,241,230,.4)}
+#editbar button:disabled{opacity:.4;cursor:not-allowed}
+#editbar .st{color:#8FB3C4;font-size:12px;width:100%;line-height:1.4}
+body.editing [contenteditable]{outline:1px dashed rgba(184,68,47,.55);outline-offset:2px;border-radius:2px}
+body.editing [contenteditable]:hover{background:rgba(214,169,59,.14)}
+body.editing [contenteditable]:focus{outline:2px solid #B8442F;background:rgba(214,169,59,.2)}
+body.editing{cursor:text}
+@media print{#editbar{display:none!important}}
+
+
+/* ===== DIZAYN PANELI ===== */
+#dz{
+  position:fixed;right:16px;bottom:86px;z-index:9998;width:min(330px,calc(100vw - 32px));
+  max-height:min(66vh,560px);overflow-y:auto;display:none;
+  background:#0B2230;color:#F5F1E6;border:1px solid #D6A93B;border-radius:8px;
+  padding:16px;font-family:system-ui,sans-serif;font-size:13px;
+  box-shadow:0 16px 44px -12px rgba(0,0,0,.6);
+}
+#dz.open{display:block}
+#dz h4{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#D6A93B;
+  margin:16px 0 8px;font-weight:700;border-bottom:1px solid rgba(245,241,230,.18);padding-bottom:5px}
+#dz h4:first-child{margin-top:0}
+#dz .row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:7px}
+#dz .row label{color:rgba(245,241,230,.8);flex:1;font-size:12.5px}
+#dz input[type=color]{width:38px;height:26px;border:1px solid rgba(245,241,230,.3);
+  border-radius:4px;background:transparent;padding:0;cursor:pointer;flex:none}
+#dz input[type=range]{width:120px;flex:none;accent-color:#D6A93B;cursor:pointer}
+#dz .val{font-size:11px;color:#8FB3C4;width:40px;text-align:right;flex:none;font-variant-numeric:tabular-nums}
+#dz .theme{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:4px}
+#dz .theme button{flex:1;min-width:82px;font-size:11.5px;padding:8px 6px;border:0;border-radius:4px;
+  cursor:pointer;background:rgba(245,241,230,.12);color:#F5F1E6;font-weight:600}
+#dz .theme button:hover{background:rgba(214,169,59,.35)}
+#dz .sec{display:flex;align-items:center;gap:5px;margin-bottom:5px;
+  background:rgba(245,241,230,.07);border-radius:4px;padding:6px 8px}
+#dz .sec span{flex:1;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#dz .sec button{border:0;background:rgba(245,241,230,.14);color:#F5F1E6;cursor:pointer;
+  border-radius:3px;width:26px;height:24px;font-size:13px;line-height:1;padding:0}
+#dz .sec button:hover{background:#D6A93B;color:#20160A}
+#dz .sec.off span{opacity:.4;text-decoration:line-through}
+#dz .hint{font-size:11.5px;color:#8FB3C4;line-height:1.45;margin-top:14px}
+@media print{#dz{display:none!important}}
+
+</style>
+</head>
+<body class="">
+
+<!-- ============ HERO ============ -->
+<header class="hero" style="">
+  <svg class="pattern" aria-hidden="true"><defs>
+    <pattern id="star" width="72" height="72" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#D6A93B" stroke-width="1">
+        <rect x="14" y="14" width="44" height="44"></rect>
+        <rect x="14" y="14" width="44" height="44" transform="rotate(45 36 36)"></rect>
+        <circle cx="36" cy="36" r="3"></circle>
+      </g>
+    </pattern></defs>
+    <rect width="100%" height="100%" fill="url(#star)"></rect>
+  </svg>
+
+  <div class="wrap">
+    <div class="brandbar">
+      <div class="brand" spellcheck="false">Shayx Muhammad Sodiq A<span>kademiyasi</span></div>
+      <div class="meta" spellcheck="false">Istanbul · Fotih · Oktyabr qabuli</div>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <div class="locpill" spellcheck="false">Istanbulning ko'hna Islom markazi - Fotihda</div>
+        <h1 spellcheck="false">Diningizni ishonchli manbadan o'rganishga qulay imkoniyat.&nbsp;</h1>
+        <p class="sub" spellcheck="false">Qur'on, Ilmu hol, Arab tili va Siyrat. Darslar o'zbek tilida. Boshlang'ich bilim shart emas — noldan boshlaysiz.</p>
+        <div class="cta-row">
+          <a class="btn btn-gold" href="#royxat" spellcheck="false">Ro'yxatdan o'tish</a>
+          <a class="btn btn-ghost" href="#narx" spellcheck="false">Batafsil tanishish</a>
+        </div>
+      </div>
+
+      <dl class="facts">
+        <div><dt spellcheck="false">Kimlar uchun</dt><dd spellcheck="false">16+ (o'gil bollar)</dd></div>
+        <div><dt spellcheck="false">Muddat</dt><dd spellcheck="false">2,5 / 5 / 7,5 / 10 oy</dd></div>
+        <div><dt spellcheck="false">Dars tili</dt><dd spellcheck="false">O'zbek tili</dd></div>
+        <div><dt spellcheck="false">Jadval</dt><dd spellcheck="false">Haftada 6 kun, har kun: 6-7 soat dars</dd></div>
+        <div><dt spellcheck="false">Kirish imtihoni</dt><dd spellcheck="false">Yo'q — faqat suhbat</dd></div>
+        <div><dt spellcheck="false">Yakunda</dt><dd spellcheck="false">Akademiya tomonidan Shahodatnoma</dd></div>
+      </dl>
+    </div>
+  </div>
+</header><section id="fanlar">
+  <div class="wrap">
+    <div class="eyebrow" spellcheck="false">Nimani o'rganasiz</div>
+    <h2 spellcheck="false">To'rt yo'nalish — bir dasturda</h2>
+    <p class="lead" spellcheck="false">Dastur bir-birini to'ldiruvchi to'rt fandan iborat. Har biri alohida ustoz tomonidan olib boriladi.</p>
+
+    <div class="grid g4">
+      <div class="card">
+        <svg class="star" viewBox="0 0 24 24" fill="none" stroke="#B8442F" stroke-width="1.4"><rect x="4" y="4" width="16" height="16"></rect><rect x="4" y="4" width="16" height="16" transform="rotate(45 12 12)"></rect></svg>
+        <h3 spellcheck="false">Qur'on</h3>
+        <p spellcheck="false">Qur'onga tushish, tajvid qoidalari, 2 pora yod olish va xatm qilish mahorati. Arab ustozdan to'g'ridan to'g'ri.</p>
+      </div>
+      <div class="card">
+        <svg class="star" viewBox="0 0 24 24" fill="none" stroke="#2A8C8C" stroke-width="1.4"><rect x="4" y="4" width="16" height="16"></rect><rect x="4" y="4" width="16" height="16" transform="rotate(45 12 12)"></rect></svg>
+        <h3 spellcheck="false">Ilmihol</h3>
+        <p spellcheck="false">Musulmonning kundalik hayotida kerak bo'ladigan asosiy aqida, fiqh va ruhiy tarbiya darslari: amaliy va tushunarli tarzda.</p>
+      </div>
+      <div class="card">
+        <svg class="star" viewBox="0 0 24 24" fill="none" stroke="#16456B" stroke-width="1.4"><rect x="4" y="4" width="16" height="16"></rect><rect x="4" y="4" width="16" height="16" transform="rotate(45 12 12)"></rect></svg>
+        <h3 spellcheck="false">Arab tili</h3>
+        <p spellcheck="false">0 dan o'qish, yozish, eshitish va gapirish mahoratigacha.&nbsp;</p>
+      </div>
+      <div class="card">
+        <svg class="star" viewBox="0 0 24 24" fill="none" stroke="#D6A93B" stroke-width="1.4"><rect x="4" y="4" width="16" height="16"></rect><rect x="4" y="4" width="16" height="16" transform="rotate(45 12 12)"></rect></svg>
+        <h3 spellcheck="false">Siyrat</h3>
+        <p spellcheck="false">Payg'ambarimiz tarixi, Islomning tug'ilishi va saodat asri</p>
+      </div>
+    </div>
+
+    <div class="note" spellcheck="false">
+      <b>Darslarni kimlar o'tadi?</b>&nbsp;<span style="caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); font-family: -webkit-standard; font-size: medium;">Asosiy darslarni O‘zbekistondagi rasmiy Islom bilim yurtlari - Madrasa va Ma’hadlarni tamomlagan ustozlar olib boradi. Barcha darslar Ahli Sunna val jamoa mazhabiga muvofiqdir.&nbsp;</span></div>
+  </div>
+</section>
+
+<!-- ============ FANLAR ============ -->
+
+
+<!-- ============ KUN TARTIBI ============ -->
+<section class="day">
+  <svg class="pattern" aria-hidden="true"><rect width="100%" height="100%" fill="url(#star)"></rect></svg>
+  <div class="wrap">
+    <div class="eyebrow" spellcheck="false">Bir kuningiz qanday o'tadi</div>
+    <h2 spellcheck="false">Ertalab darslar, asrdan keyin saboqni mustahkamlash vaqti</h2>
+    <p class="lead" spellcheck="false">Haftada 6 kun o'qiysiz. Asosiy darslar 13:00 gacha tugaydi — qolgan vaqt to'liq sizniki.</p>
+
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-time" spellcheck="false">Ertalab</div>
+        <div class="tl-body">
+          <h3 spellcheck="false">Nonushta</h3>
+          <p spellcheck="false">Turk kahvalti - nonushtasi Bu to'lov ichiga kiradi.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time" spellcheck="false">13:00 gacha</div>
+        <div class="tl-body">
+          <h3 spellcheck="false">Asosiy darslar — 4 para</h3>
+          <p spellcheck="false">Qur'on, Ilmu hol, Arab tili va Siyrat. Haftada 6 kun.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time" spellcheck="false">13:00 dan keyin</div>
+        <div class="tl-body">
+          <h3 spellcheck="false">O'z ustida ishlash va vazifalar</h3>
+          <p spellcheck="false">Murojaa (takrorlash) darslari, uyga vazifalarni bajarish, yodlash. Aynan shu vaqtda o'qishdan tashqari ishlaringizga ham ulguradi.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time" spellcheck="false">Kechqurun</div>
+        <div class="tl-body">
+          <h3 spellcheck="false">Kechki ovqat</h3>
+          <p spellcheck="false">Kuniga 2 mahal ovqat — nonushta va kechki ovqat — to'lov ichida.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time" spellcheck="false">Har saviyada</div>
+        <div class="tl-body">
+          <h3 spellcheck="false">Jamoaviy sayohat</h3>
+          <p spellcheck="false">Har bir 2,5 oylik saviya davomida 1 marta jamoaviy ziyorat va sayohatga chiqiladi.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NARX ============ -->
+<section id="narx">
+  <div class="wrap">
+    <div class="eyebrow" spellcheck="false">Muddat va to'lov</div>
+    <h2 spellcheck="false">O'zingizga mos muddatni tanlang</h2>
+    <p class="lead" spellcheck="false">Har bir bosqich 2,5 oy davom etadi. Xohlasangiz 2,5 oylik bosqichni tugatib qaytshingiz mumkin, hohlasangiz qolgan bosqichlarni davom ettirishingiz mumkin— bu sizning yanlovingizga qoladi. Quyida bosqich ta'riflari bilan tanishib chiqishingiz mumkin.&nbsp;</p>
+
+    <div class="tiles">
+      <div class="tile">
+        <div class="lvl" spellcheck="false">1-bosqich</div>
+        <h3 spellcheck="false">2,5 oy</h3>
+        <div class="breakdown">
+          <div><span spellcheck="false">Ta'lim</span><span spellcheck="false">600 $</span></div>
+          <div><span spellcheck="false">Yotoqxona + ovqat</span><span spellcheck="false">625 $</span></div>
+          <div><span spellcheck="false">Yashash ruxsatnomasi</span><span spellcheck="false">kerak emas</span></div>
+        </div>
+        <div class="total"><small spellcheck="false">Jami taxminan</small><b spellcheck="false">1 225 $</b></div>
+      </div>
+
+      <div class="tile hot">
+        <div class="tag" spellcheck="false">Ommabop</div>
+        <div class="lvl" spellcheck="false">1–2-bosqich</div>
+        <h3 spellcheck="false">5 oy</h3>
+        <div class="breakdown">
+          <div><span spellcheck="false">Ta'lim</span><span spellcheck="false">1 200 $</span></div>
+          <div><span spellcheck="false">Yotoqxona + ovqat</span><span spellcheck="false">1 250 $</span></div>
+          <div><span spellcheck="false">Yashash ruxsatnomasi</span><span spellcheck="false">~1 200 $</span></div>
+        </div>
+        <div class="total"><small spellcheck="false">Jami taxminan</small><b spellcheck="false">3 650 $</b></div>
+      </div>
+
+      <div class="tile">
+        <div class="lvl" spellcheck="false">1–3-bosqich</div>
+        <h3 spellcheck="false">7,5 oy</h3>
+        <div class="breakdown">
+          <div><span spellcheck="false">Ta'lim</span><span spellcheck="false">1 800 $</span></div>
+          <div><span spellcheck="false">Yotoqxona + ovqat</span><span spellcheck="false">1 875 $</span></div>
+          <div><span spellcheck="false">Yashash ruxsatnomasi</span><span spellcheck="false">~1 200 $</span></div>
+        </div>
+        <div class="total"><small spellcheck="false">Jami taxminan</small><b spellcheck="false">4 875 $</b></div>
+      </div>
+
+      <div class="tile">
+        <div class="lvl" spellcheck="false">To'liq kurs</div>
+        <h3 spellcheck="false">10 oy</h3>
+        <div class="breakdown">
+          <div><span spellcheck="false">Ta'lim</span><span spellcheck="false">2 400 $</span></div>
+          <div><span spellcheck="false">Yotoqxona + ovqat</span><span spellcheck="false">2 500 $</span></div>
+          <div><span spellcheck="false">Yashash ruxsatnomasi</span><span spellcheck="false">~1 200 $</span></div>
+        </div>
+        <div class="total"><small spellcheck="false">Jami taxminan</small><b spellcheck="false">6 100 $</b></div>
+      </div>
+    </div>
+
+    <div class="note" spellcheck="false">
+      <b>Muhim:</b> ta'lim to'lovi, yotoqxona-ovqat to'lovi va yashash ruxsatnomasi <b>alohida-alohida</b> hisoblanadi va alohida to'lanadi.
+      Yuqoridagi "jami" — shu uchtasini qo'shganda chiqadigan taxminiy summa, o'zingizga qulay bo'lsin uchun hisoblab qo'yilgan.
+      <ul>
+        <li spellcheck="false">Yotoqxona va ovqat — oyiga <b>250 $</b>, har oy to'lab boriladi.</li>
+        <li spellcheck="false">Yashash ruxsatnomasi — faqat 5, 7,5 va 10 oylik dasturlar uchun, <b>~1 000 $</b> atrofida.</li>
+      </ul>
+    </div>
+
+    <div class="split" style="margin-top:26px">
+      <div class="blk">
+        <h3 spellcheck="false">To'lovni qanday amalga oshirasiz</h3>
+        <ul>
+          <li spellcheck="false"><b>2,5 oylik dastur</b> — to'lov bir marotabada, to'liq amalga oshiriladi.</li>
+          <li spellcheck="false"><b>5, 7,5 va 10 oylik dasturlar</b> — ta'lim to'lovini <b>2 qismga bo'lib</b> to'lash mumkin.</li>
+          <li spellcheck="false"><br></li>
+          <li spellcheck="false"><br></li>
+        </ul>
+      </div>
+      <div class="blk">
+        <h3 spellcheck="false">To'lovga kirmaydigan xarajatlar</h3>
+        <ul>
+          <li spellcheck="false">Aviachipta — borish va kelish.</li>
+          <li spellcheck="false">Kitob va o'quv qurollari. Akademiya kerakli kitoblarni tavsiya qiladi, talaba sotib oladi. <b>Aniq summasi qabul jarayonida aytiladi.</b></li>
+          <li spellcheck="false"><br></li>
+          <li spellcheck="false"><br></li>
+          <li spellcheck="false"><br></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note" spellcheck="false"><br></div>
+  </div>
+</section>
+
+<!-- ============ SHAROIT ============ -->
+<section style="background:var(--paper2)">
+  <div class="wrap">
+    <div class="eyebrow" spellcheck="false">Yashash sharoiti</div>
+    <h2 spellcheck="false">Fotih masjidining panasida yashaysiz</h2>
+    <p class="lead" spellcheck="false">Yotoqxona Istanbulning Fotih tumanida, Fotih masjidiga atigi 150 metr masofada joylashgan.</p>
+
+    <div class="split">
+      <div class="blk">
+        <h3 spellcheck="false">Yotoqxona</h3>
+        <ul>
+          <li spellcheck="false">Har bir xona <b>4 kishiga</b> mo'ljallangan.</li>
+          <li spellcheck="false">Bino barcha zaruriy qulayliklarga ega:<div>Sport zali</div><div>Masjid<br>Kofiteriya</div><div>Kutubxona</div></li>
+          <li spellcheck="false"><br></li>
+          <li spellcheck="false"><br></li>
+        </ul>
+      </div>
+      <div class="blk">
+        <h3 spellcheck="false">Ovqatlanish</h3>
+        <ul>
+          <li spellcheck="false"><br></li>
+          <li spellcheck="false"><br></li>
+          <li spellcheck="false">Jami kuniga 2 mahal ovqat — to'lov ichida.</li>
+        </ul>
+      </div>
+      <div class="blk">
+        <h3 spellcheck="false">Aeroportdan qanday yetib borasiz</h3>
+        <ul>
+          <li spellcheck="false"><b>Mustaqil kelish:</b> sizga manzilgacha yetib olish bo'yicha to'liq video qo'llanma beriladi.</li>
+          <li spellcheck="false"><b>Kutib olish xizmati:</b> belgilangan to'lovni amalga oshirsangiz, mas'ullar aeroportga chiqib sizni kutib oladi.</li>
+        </ul>
+      </div>
+      <div class="blk">
+        <h3 spellcheck="false">Tartib-intizom</h3>
+        <ul>
+          <li spellcheck="false">Talabalar akademiyaning <b>to'liq ichki tartibiga</b> amal qilishlari shart.</li>
+          <li spellcheck="false">Sog'liq muammosi bo'lsa birinchi yordam ko'rsatiladi, jiddiy holatda shifoxonaga olib boriladi. Xarajatlarni talaba qoplaydi.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HUJJAT ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow" spellcheck="false">Hujjatlar va qonuniylik</div>
+    <h2 spellcheck="false">Hammasi rasmiy yo'l bilan</h2>
+    <p class="lead" spellcheck="false">Faqat qizil (xorijga chiqish) pasportingiz bo'lsa yetarli. Qolganiga yordam beramiz.</p>
+
+    <div class="split">
+      <div class="blk">
+        <h3 spellcheck="false">2,5 oylik dastur</h3>
+        <ul>
+          <li spellcheck="false">O'zbekiston fuqarosi Turkiyada <b>90 kun vizasiz</b> yashash huquqiga ega.</li>
+          <li spellcheck="false">Shuning uchun yashash ruxsatnomasi (iqoma) <b>kerak emas</b>.</li>
+          <li spellcheck="false"><br></li>
+        </ul>
+      </div>
+      <div class="blk">
+        <h3 spellcheck="false">5, 7,5 va 10 oylik dasturlar</h3>
+        <ul>
+          <li spellcheck="false">Bir yillik <b>talabalik yashash ruxsatnomasi</b> olinadi.</li>
+          <li spellcheck="false">Iqoma xarajati — <b>1 200 $</b>&nbsp;</li>
+          <li spellcheck="false">Talaba Istanbuldagi rasmiy universitetlardan qayddan o'tkaziladi.</li>
+          <li spellcheck="false">Akademiya sizni o'zi ishonadigan, ruxsatnomani rasmiylashtirib beradigan shirkatga yo'naltiradi.</li>
+          <li spellcheck="false">Ruxsatnoma berilmay qolgan holat <b>deyarli uchramagan</b>.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KIM TOPSHIRA OLADI ============ -->
+<section style="background:var(--paper2)">
+  <div class="wrap">
+    <div class="eyebrow" spellcheck="false">Qabul shartlari</div>
+    <h2 spellcheck="false">Kim topshira oladi?</h2>
+    <p class="lead" spellcheck="false">Diniy bilimingiz bo'lmasa ham topshiraverasiz — kirish imtihoni yo'q, faqat suhbat.</p>
+
+    <div class="grid g2">
+      <div class="card">
+        <span class="num" spellcheck="false">YOSH</span>
+        <h3 spellcheck="false">16 yoshdan yuqori o'gil bollar</h3>
+        <p spellcheck="false"><b>18–35 yosh:</b> yashash ruxsatnomasi va yotoqxona masalasida to'liq amaliy yordam beriladi.<br><br>
+        <b>35 yoshdan yuqori:</b> talabalik guvohnomasi bo'lganlar akademiya yotoqxonasida qolishlari mumkin. Talabalik guvohnomasi bo'lmaganlar turar joyni o'zlari hal qiladilar.</p>
+      </div>
+      <div class="card">
+        <span class="num" spellcheck="false">FUQAROLIK</span>
+        <h3 spellcheck="false">Faqat O'zbekistondan emas</h3>
+        <p spellcheck="false">Dasturda <b>har qanday o'zbek zabon</b> shaxs qatnasha oladi. Yevropa, Rossiya, Koreya va boshqa davlatlarda yashovchi o'zbeklar ham topshirishi mumkin.</p>
+      </div>
+      <div class="card">
+        <span class="num" spellcheck="false">BILIM</span>
+        <h3 spellcheck="false">Boshlang'ich bilim shart emas</h3>
+        <p spellcheck="false">Arab tili yoki diniy bilim talab qilinmaydi. Ilmiy saviya so'ralmaydi — qabul <b>suhbat</b> orqali amalga oshiriladi.</p>
+      </div>
+      <div class="card">
+        <span class="num" spellcheck="false">MUDDAT</span>
+        <h3 spellcheck="false">Qabul har 2,5 oyda</h3>
+        <p spellcheck="false">Qabul har 2,5 oyda qayta ochiladi. Darslar <b>oktyabr oyidan</b> boshlanadi. Joylar cheklangan<div><br></div></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QADAMLAR ============ -->
+<section id="royxat">
+  <div class="wrap">
+    <div class="eyebrow" spellcheck="false">Qanday qo'shilasiz</div>
+    <h2 spellcheck="false">4 qadam — hammasi shu</h2>
+    <p class="lead" spellcheck="false">Ro'yxatdan o'tgach, 3 kun ichida o'zimiz siz bilan bog'lanamiz.</p>
+
+    <div class="steps">
+      <div class="step">
+        <h3 spellcheck="false">Ro'yxatdan o'ting</h3>
+        <p spellcheck="false">Havola orqali qisqa anketani to'ldirasiz. Bir necha daqiqa vaqt oladi.</p>
+      </div>
+      <div class="step">
+        <h3 spellcheck="false">Biz aloqaga chiqamiz</h3>
+        <p spellcheck="false">3 kun ichida mas'ul xodim siz bilan bog'lanadi.</p>
+      </div>
+      <div class="step">
+        <h3 spellcheck="false">Suhbatdan o'tasiz</h3>
+        <p spellcheck="false">Imtihon emas — oddiy suhbat. Maqsadingiz va muddatingizni aniqlab olamiz.</p>
+      </div>
+      <div class="step">
+        <h3 spellcheck="false">To'lov va yo'lga tayyorgarlik</h3>
+        <p spellcheck="false">Joyingiz band qilinadi, hujjat va yo'l masalasida yo'l-yo'riq beriladi.</p>
+      </div>
+    </div>
+
+    <div class="cta-row" style="justify-content:center;margin-top:44px">
+      <a class="btn btn-dark" href="#" spellcheck="false">Ro'yxatdan o'tish</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" style="background:var(--paper2)">
+  <div class="narrow">
+    <div class="eyebrow" spellcheck="false">Ko'p beriladigan savollar</div>
+    <h2 style="margin-bottom:36px" spellcheck="false">Savolingizga javob</h2>
+
+    <h3 class="cat" spellcheck="false">Dars va dastur</h3>
+    <details><summary spellcheck="false">Modullar bir-biridan nimasi bilan farq qiladi?</summary>
+      <div class="ans" spellcheck="false">Bular ketma-ket saviyalar. Har bir saviya 2,5 oy davom etadi. Qancha muddatga yozilsangiz, shuncha saviyani bosib o'tasiz.</div></details>
+    <details><summary spellcheck="false">2,5 oylikni tugatib, keyin muddatni uzaytirsam bo'ladimi?</summary>
+      <div class="ans" spellcheck="false">Ha. O'z xohishingizga ko'ra keyingi saviyaga o'tib, o'qishni davom ettirasiz.</div></details>
+    <details><summary spellcheck="false"><br></summary>
+      <div class="ans" spellcheck="false">Saviya davomida <b>oraliq nazoratlar</b> bo'ladi, oxirida <b>yakuniy imtihon</b> topshiriladi. Yakuniy imtihon natijasi sertifikatga yoziladi.</div></details>
+    <details><summary spellcheck="false">Sertifikat beriladimi?</summary>
+      <div class="ans" spellcheck="false">Ha. Dastur yakunida <b>Shayx Muhammad Sodiq akademiyasi</b> tomonidan sertifikat topshiriladi.</div></details>
+    <details><summary spellcheck="false"><br></summary>
+      <div class="ans" spellcheck="false">Akademiya kerakli kitob va manbalarni tavsiya qiladi, ularni talaba o'zi sotib oladi. Taxminiy summa qabul jarayonida aniq aytiladi.</div></details>
+    <details><summary spellcheck="false">Darslar qaysi tilda?</summary>
+      <div class="ans" spellcheck="false">Asosiy darslar <b>o'zbek tilida</b>. Arab tilidagi so'zlashuv yo'nalishi arab tilida, Qur'on esa arab ustozga topshiriladi.</div></details>
+
+    <h3 class="cat" spellcheck="false">Pul masalasi</h3>
+    <details><summary spellcheck="false">Bo'lib to'lash mumkinmi?</summary>
+      <div class="ans" spellcheck="false">2,5 oylik dastur to'lovi <b>bir marotabada</b> to'liq amalga oshiriladi. 5, 7,5 va 10 oylik dasturlarda ta'lim to'lovini <b>2 qismga bo'lib</b> to'lasangiz bo'ladi. Yotoqxona va ovqat to'lovi esa har oy alohida to'lanadi.</div></details>
+    <details><summary spellcheck="false">To'lov qaytariladimi?</summary>
+      <div class="ans" spellcheck="false">Talaba kelib, o'qishni boshlab, muddat o'rtasida ketaman desa — <b>to'lov qaytarilmaydi</b>. Sababi: har bir kishi uchun joy oldindan band qilinadi, ustozlar va boshqa xarajatlar qilinadi.</div></details>
+    <details><summary spellcheck="false">Aviachipta narxi to'lov ichidami?</summary>
+      <div class="ans" spellcheck="false">Yo'q. Ta'lim, yotoqxona-ovqat va yashash ruxsatnomasidan boshqa barcha xarajatlar talabaning o'z hisobidan bo'ladi.</div></details>
+    <details><summary spellcheck="false">Aeroportda kutib olish qancha turadi?</summary>
+      <div class="ans" spellcheck="false">Narxini adminlardan bilib olasiz. Xohlasangiz mustaqil ham kelishingiz mumkin — buning uchun to'liq video qo'llanma beriladi.</div></details>
+
+    <h3 class="cat" spellcheck="false">Shaxsiy masalalar</h3>
+    <details><summary spellcheck="false">O'qish bilan birga onlayn ishlay olamanmi?</summary>
+      <div class="ans" spellcheck="false">Ha. Asosiy darslar 13:00 gacha tugagani uchun kuniga <b>2–3 soat</b> vaqt ajratib ishlash imkoni bor.</div></details>
+    <details><summary spellcheck="false"><br></summary>
+      <div class="ans" spellcheck="false">Imkoniyat bor, lekin <b>tavsiya qilinmaydi</b>. Asosiy e'tibor o'qishga qaratilishi kerak.</div></details>
+    <details><summary spellcheck="false">Oilamni olib kelsam bo'ladimi?</summary>
+      <div class="ans" spellcheck="false">Ha, mumkin. Bu holatda talaba <b>o'zi turar joy topadi</b> va akademiya yotoqxonasi uchun to'lov qilmaydi.</div></details>
+    <details><summary spellcheck="false"><br></summary>
+      <div class="ans" spellcheck="false">Vaziyatga qarab birinchi yordam ko'rsatiladi, jiddiy holatda shifoxonaga olib boriladi. Tibbiy xarajatlarni talaba qoplaydi.</div></details>
+    <details><summary spellcheck="false"><br></summary>
+      <div class="ans" spellcheck="false">Ha. Har bir saviya davomida <b>1 marta</b> jamoaviy ziyorat va sayohat tashkil etiladi.</div></details>
+
+    <h3 class="cat" spellcheck="false">Hujjat va qabul</h3>
+    <details><summary spellcheck="false">Qanday hujjat kerak?</summary>
+      <div class="ans" spellcheck="false">Faqat <b>qizil (xorijga chiqish) pasport</b> yetarli.</div></details>
+    <details><summary spellcheck="false">Hujjat rasmiylashtirishda yordam berasizmi?</summary>
+      <div class="ans" spellcheck="false">Ha. Nomzod akademiya ishonch bildirgan, yashash ruxsatnomasini rasmiylashtirib beradigan shirkatga yo'naltiriladi.</div></details>
+    <details><summary spellcheck="false">Kirish imtihoni bormi?</summary>
+      <div class="ans" spellcheck="false">Yo'q. Ilmiy saviya talab qilinmaydi — qabul suhbat orqali amalga oshiriladi.</div></details>
+    <details><summary spellcheck="false">Ro'yxatdan o'tsam qachon javob beriladi?</summary>
+      <div class="ans" spellcheck="false">Havola orqali ro'yxatdan o'tasiz, <b>3 kun ichida</b> siz bilan aloqaga chiqiladi.</div></details>
+    <details><summary spellcheck="false">Darslar qachon boshlanadi?</summary>
+      <div class="ans" spellcheck="false">Darslar <b>oktyabr oyidan</b> boshlanadi. Qabul esa har 2,5 oyda qayta ochiladi.</div></details>
+  </div>
+</section>
+
+<!-- ============ FINAL ============ -->
+<section class="final">
+  <svg class="pattern" aria-hidden="true"><rect width="100%" height="100%" fill="url(#star)"></rect></svg>
+  <div class="wrap">
+    <h2 spellcheck="false">Joylar cheklangan.<br>Oktyabr guruhiga yoziling.</h2>
+    <p spellcheck="false">Ro'yxatdan o'tish bepul va hech narsaga majburlamaydi. 3 kun ichida siz bilan bog'lanamiz va barcha savolingizga javob beramiz.</p>
+    <div class="cta-row" style="justify-content:center">
+      <a class="btn btn-gold" href="#" spellcheck="false">Ro'yxatdan o'tish</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" spellcheck="false"><b>Shayx Muhammad Sodiq akademiyasi</b> — Istanbul, Fotih tumani. Fotih masjidiga 150 metr.<br>
+  Narx va shartlar o'zgarishi mumkin. Aniq ma'lumot uchun mas'ullar bilan bog'laning.</div>
+</footer>
+
+
+<div id="editbar">
+  <div class="st" id="est">Yozuvlarni o'zgartirish uchun "Tahrirlash" tugmasini bosing.</div>
+  <button id="eOn">Tahrirlash</button>
+  <button id="eSave" class="g" disabled="">Saqlab yuklab olish</button>
+  <button id="eDz" class="g">Dizayn</button>
+  <button id="eUndo" class="g" disabled="">Bekor qilish</button>
+</div>
+
+<script>
+(function(){
+  var SEL = "h1,h2,h3,p,li,dt,dd,summary,small,.note,"
+          + ".ans,.num,.lvl,.tag,.eyebrow,.tl-time,.locpill,.brand,.meta,"
+          + ".breakdown span,.total b,.btn,footer .wrap";
+  var bar   = document.getElementById('editbar');
+  var bOn   = document.getElementById('eOn');
+  var bSave = document.getElementById('eSave');
+  var bUndo = document.getElementById('eUndo');
+  var st    = document.getElementById('est');
+  var editing = false, snapshot = null;
+
+  function nodes(){ return document.querySelectorAll(SEL); }
+
+  function block(e){ if(editing){ e.preventDefault(); } }
+
+  function setEdit(on){
+    editing = on;
+    document.body.classList.toggle('editing', on);
+    nodes().forEach(function(el){
+      if(el.closest('#editbar')) return;
+      if(on){
+        el.setAttribute('contenteditable','true');
+        el.spellcheck = false;
+      } else {
+        el.removeAttribute('contenteditable');
+      }
+    });
+    bOn.textContent = on ? "Tahrirni to'xtatish" : "Tahrirlash";
+    bSave.disabled = !on;
+    bUndo.disabled = !on;
+    st.textContent = on
+      ? "Istalgan yozuv ustiga bosib yozing. Tugagach 'Saqlab yuklab olish' ni bosing."
+      : "Yozuvlarni o'zgartirish uchun \"Tahrirlash\" tugmasini bosing.";
+  }
+
+  bOn.addEventListener('click', function(){
+    if(!editing && snapshot === null){ snapshot = document.body.innerHTML; }
+    setEdit(!editing);
+  });
+
+  bUndo.addEventListener('click', function(){
+    if(snapshot === null) return;
+    if(!confirm("Barcha o'zgarishlar bekor qilinadi. Davom etamizmi?")) return;
+    document.body.innerHTML = snapshot;
+    location.reload();
+  });
+
+  bSave.addEventListener('click', function(){
+    setEdit(false);
+    var clone = document.documentElement.cloneNode(true);
+    clone.querySelectorAll('[contenteditable]').forEach(function(el){
+      el.removeAttribute('contenteditable');
+      el.removeAttribute('spellcheck');
+    });
+    var b = clone.querySelector('body'); if(b) b.classList.remove('editing');
+    var s = clone.querySelector('#eSave'); if(s) s.setAttribute('disabled','');
+    var u = clone.querySelector('#eUndo'); if(u) u.setAttribute('disabled','');
+    var o = clone.querySelector('#eOn');   if(o) o.textContent = 'Tahrirlash';
+
+    var html = '<!DOCTYPE html>\n' + clone.outerHTML;
+    var blob = new Blob([html], {type:'text/html;charset=utf-8'});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    var d = new Date().toISOString().slice(0,10);
+    a.download = 'landing-' + d + '.html';
+    document.body.appendChild(a); a.click(); a.remove();
+    st.textContent = "Saqlandi. Yangi fayl yuklab olindi \u2014 shundan keyin faqat shu yangi fayl bilan ishlang.";
+  });
+
+  document.addEventListener('click', function(e){
+    if(!editing) return;
+    var a = e.target.closest('a');
+    var sm = e.target.closest('summary');
+    if(a || sm) e.preventDefault();
+  }, true);
+
+  window.addEventListener('beforeunload', function(e){
+    if(editing){ e.preventDefault(); e.returnValue = ''; }
+  });
+})();
+</script>
+
+
+<div id="dz" class="">
+  <h4>Tayyor rang to'plamlari</h4>
+  <div class="theme">
+    <button data-t="iznik">İznik ko'k</button>
+    <button data-t="zumrad">Zumrad</button>
+    <button data-t="siyoh">Kechki siyoh</button>
+    <button data-t="qum">Cho'l qumi</button>
+  </div>
+
+  <h4>Ranglar</h4>
+  <div class="row"><label>To'q fon (hero, footer)</label><input type="color" data-v="--night"></div>
+  <div class="row"><label>Urg'u rang (tugmalar)</label><input type="color" data-v="--gold"></div>
+  <div class="row"><label>Ikkilamchi (sarlavhachalar)</label><input type="color" data-v="--turquoise"></div>
+  <div class="row"><label>Qizil urg'u (raqamlar)</label><input type="color" data-v="--bole"></div>
+  <div class="row"><label>Sahifa foni</label><input type="color" data-v="--paper"></div>
+  <div class="row"><label>Oraliq bo'lim foni</label><input type="color" data-v="--paper2"></div>
+  <div class="row"><label>Kartochka foni</label><input type="color" data-v="--card"></div>
+  <div class="row"><label>Asosiy matn rangi</label><input type="color" data-v="--ink"></div>
+
+  <h4>O'lchamlar</h4>
+  <div class="row"><label>Matn o'lchami</label>
+    <input type="range" data-v="--fs-base" min="14" max="21" step="1"><span class="val">17px</span></div>
+  <div class="row"><label>Asosiy sarlavha</label>
+    <input type="range" data-v="--fs-h1" min="38" max="86" step="2"><span class="val">66px</span></div>
+  <div class="row"><label>Bo'lim sarlavhasi</label>
+    <input type="range" data-v="--fs-h2" min="26" max="56" step="1"><span class="val">42px</span></div>
+  <div class="row"><label>Bo'limlar orasi</label>
+    <input type="range" data-v="--sec-pad" min="44" max="150" step="2"><span class="val">92px</span></div>
+  <div class="row"><label>Burchak yumshoqligi</label>
+    <input type="range" data-v="--r" min="0" max="22" step="1"><span class="val">4px</span></div>
+
+  <h4>Bo'limlar tartibi</h4>
+  <div id="dzSecs"><div class="sec"><span>1. Diningizni ishonchli manba…</span><button title="Yuqoriga">↑</button><button title="Pastga">↓</button><button title="Yashirish/ko‘rsatish">●</button></div><div class="sec"><span>2. To'rt yo'nalish — bir dast…</span><button title="Yuqoriga">↑</button><button title="Pastga">↓</button><button title="Yashirish/ko‘rsatish">●</button></div><div class="sec"><span>3. Ertalab dars, tushdan keyi…</span><button title="Yuqoriga">↑</button><button title="Pastga">↓</button><button title="Yashirish/ko‘rsatish">●</button></div><div class="sec"><span>4. O'zingizga mos muddatni ta…</span><button title="Yuqoriga">↑</button><button title="Pastga">↓</button><button title="Yashirish/ko‘rsatish">●</button></div><div class="sec"><span>5. Fotih masjidining panasida…</span><button title="Yuqoriga">↑</button><button title="Pastga">↓</button><button title="Yashirish/ko‘rsatish">●</button></div><div class="sec"><span>6. Hammasi rasmiy yo'l bilan</span><button title="Yuqoriga">↑</button><button title="Pastga">↓</button><button title="Yashirish/ko‘rsatish">●</button></div><div class="sec"><span>7. Kim topshira oladi?</span><button title="Yuqoriga">↑</button><button title="Pastga">↓</button><button title="Yashirish/ko‘rsatish">●</button></div><div class="sec"><span>8. 4 qadam — hammasi shu</span><button title="Yuqoriga">↑</button><button title="Pastga">↓</button><button title="Yashirish/ko‘rsatish">●</button></div><div class="sec"><span>9. Savolingizga javob</span><button title="Yuqoriga">↑</button><button title="Pastga">↓</button><button title="Yashirish/ko‘rsatish">●</button></div><div class="sec"><span>10. Joylar cheklangan.Oktyabr …</span><button title="Yuqoriga">↑</button><button title="Pastga">↓</button><button title="Yashirish/ko‘rsatish">●</button></div><div class="sec"><span>11. Pastki qism</span><button title="Yuqoriga">↑</button><button title="Pastga">↓</button><button title="Yashirish/ko‘rsatish">●</button></div></div>
+
+  <div class="hint">O'zgarishlar shu yerda darhol ko'rinadi. Yakunda pastdagi
+  <b>"Saqlab yuklab olish"</b> tugmasini bosing — dizayn ham yangi faylga yoziladi.</div>
+  <div style="margin-top:12px"><button id="dzReset" style="width:100%;padding:9px;border:1px solid rgba(245,241,230,.4);background:transparent;color:#F5F1E6;border-radius:4px;cursor:pointer;font:inherit">Dastlabki holatga qaytarish</button></div>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var dz   = document.getElementById('dz');
+  var btn  = document.getElementById('eDz');
+  var PX   = ['--fs-base','--fs-h1','--fs-h2','--sec-pad','--r'];
+
+  var DEFAULTS = {};
+  ['--night','--gold','--turquoise','--bole','--paper','--paper2','--card','--ink']
+    .concat(PX).forEach(function(k){
+      DEFAULTS[k] = getComputedStyle(root).getPropertyValue(k).trim();
+    });
+
+  var THEMES = {
+    iznik: {'--night':'#0b2230','--gold':'#d6a93b','--turquoise':'#2a8c8c','--bole':'#b8442f',
+            '--paper':'#f5f1e6','--paper2':'#eae3d1','--card':'#ffffff','--ink':'#15303c'},
+    zumrad:{'--night':'#0d2b22','--gold':'#c8a44a','--turquoise':'#3f8f6e','--bole':'#a8552c',
+            '--paper':'#f4f2ea','--paper2':'#e6e5d7','--card':'#ffffff','--ink':'#1b3329'},
+    siyoh: {'--night':'#141428','--gold':'#c9a227','--turquoise':'#6b7fbf','--bole':'#9c4b6b',
+            '--paper':'#f2f1f4','--paper2':'#e4e3ea','--card':'#ffffff','--ink':'#22223a'},
+    qum:   {'--night':'#3b2a1e','--gold':'#d9a542','--turquoise':'#8a7a4f','--bole':'#a8492f',
+            '--paper':'#f7f2e7','--paper2':'#ece2cd','--card':'#fffdf8','--ink':'#3a2e22'}
+  };
+
+  function toHex(c){
+    c = (c||'').trim();
+    if(c.charAt(0)==='#'){
+      if(c.length===4) return '#'+c[1]+c[1]+c[2]+c[2]+c[3]+c[3];
+      return c.slice(0,7);
+    }
+    var m = c.match(/(\d+)[,\s]+(\d+)[,\s]+(\d+)/);
+    if(!m) return '#000000';
+    return '#'+[1,2,3].map(function(i){
+      return ('0'+parseInt(m[i],10).toString(16)).slice(-2);
+    }).join('');
+  }
+
+  function cur(k){
+    var v = root.style.getPropertyValue(k).trim();
+    return v || DEFAULTS[k];
+  }
+
+  function sync(){
+    dz.querySelectorAll('input[data-v]').forEach(function(inp){
+      var k = inp.dataset.v, v = cur(k);
+      if(inp.type === 'color'){ inp.value = toHex(v); }
+      else {
+        inp.value = parseFloat(v) || 0;
+        inp.parentNode.querySelector('.val').textContent = inp.value + 'px';
+      }
+    });
+  }
+
+  dz.querySelectorAll('input[data-v]').forEach(function(inp){
+    inp.addEventListener('input', function(){
+      var k = inp.dataset.v;
+      var v = inp.type === 'color' ? inp.value : inp.value + 'px';
+      root.style.setProperty(k, v);
+      if(inp.type === 'range'){
+        inp.parentNode.querySelector('.val').textContent = inp.value + 'px';
+      }
+    });
+  });
+
+  dz.querySelectorAll('.theme button').forEach(function(b){
+    b.addEventListener('click', function(){
+      var t = THEMES[b.dataset.t];
+      for(var k in t){ root.style.setProperty(k, t[k]); }
+      sync();
+    });
+  });
+
+  document.getElementById('dzReset').addEventListener('click', function(){
+    if(!confirm('Dizayn dastlabki holatiga qaytadi. Davom etamizmi?')) return;
+    for(var k in DEFAULTS){ root.style.removeProperty(k); }
+    blocks().forEach(function(el){ el.style.removeProperty('display'); });
+    sync(); drawSecs();
+  });
+
+  /* --- bo'limlar tartibi --- */
+  function blocks(){
+    return Array.prototype.slice.call(
+      document.querySelectorAll('body > header, body > section, body > footer'));
+  }
+  function label(el, i){
+    var h = el.querySelector('h1,h2');
+    var t = h ? h.textContent.replace(/\s+/g,' ').trim() : (el.tagName === 'FOOTER' ? 'Pastki qism' : 'Bo\u2018lim');
+    return (i+1) + '. ' + (t.length > 26 ? t.slice(0,26) + '\u2026' : t);
+  }
+  var host = document.getElementById('dzSecs');
+  function drawSecs(){
+    var list = blocks();
+    host.innerHTML = '';
+    list.forEach(function(el, i){
+      var hidden = el.style.display === 'none';
+      var d = document.createElement('div');
+      d.className = 'sec' + (hidden ? ' off' : '');
+      d.innerHTML = '<span>' + label(el,i) + '</span>'
+        + '<button title="Yuqoriga">\u2191</button>'
+        + '<button title="Pastga">\u2193</button>'
+        + '<button title="Yashirish/ko\u2018rsatish">' + (hidden ? '\u25CB' : '\u25CF') + '</button>';
+      var b = d.querySelectorAll('button');
+      b[0].onclick = function(){
+        var pv = list[i-1]; if(pv) pv.parentNode.insertBefore(el, pv); drawSecs();
+      };
+      b[1].onclick = function(){
+        var nx = list[i+1]; if(nx) nx.parentNode.insertBefore(nx, el); drawSecs();
+      };
+      b[2].onclick = function(){
+        el.style.display = hidden ? '' : 'none'; drawSecs();
+      };
+      host.appendChild(d);
+    });
+  }
+
+  btn.addEventListener('click', function(){
+    dz.classList.toggle('open');
+    btn.textContent = dz.classList.contains('open') ? 'Dizaynni yopish' : 'Dizayn';
+    if(dz.classList.contains('open')){ sync(); drawSecs(); }
+  });
+
+  /* saqlashda panel yopiq holatda ketsin */
+  var save = document.getElementById('eSave');
+  save.addEventListener('click', function(){
+    dz.classList.remove('open');
+    btn.textContent = 'Dizayn';
+  }, true);
+
+  sync();
+})();
+</script>
+
+
+
+</body></html>
